@@ -1,7 +1,5 @@
 $(document).ready(() => {
-
-
-          // Our servise
+// Our servise
   (() => {
     $('div.our-services-list').on('click', 'div:not(.active)', function() {
       $(this)
@@ -14,7 +12,7 @@ $(document).ready(() => {
 
   		// Our Amazing Work
 
-  let counter = 0 // to count button clicks
+  let counter = 0
   $('#but1').on('click',function(){
   	counter++;
   	if(counter == 1){
@@ -29,14 +27,13 @@ $(document).ready(() => {
 
   	` )
   		setTimeout(function(){
-  		$('.gallery-container').css('maxHeight','1200px')
-  		$('#but1').css('visibility','visible')
-  		$('.loader').css('display','none')
+    		$('.gallery-container').css('maxHeight','1200px')
+    		$('#but1').css('visibility','visible')
+    		$('.loader').css('display','none')
   		},5000)
 
   	}
   	else{
-
   				$('#but1').css('visibility','hidden')
   				$('.loader').css('display','block')
   		$('.loader').append( `
@@ -48,9 +45,9 @@ $(document).ready(() => {
 
   	` )
   		setTimeout(function(){
-  		$('.gallery-container').css('maxHeight','1800px')
-  		$('#but1').css('display','none')
-  		$('.loader').css('display','none')
+    		$('.gallery-container').css('maxHeight','1800px')
+    		$('#but1').css('display','none')
+    		$('.loader').css('display','none')
   		},5000)
   	}
   })
@@ -113,7 +110,7 @@ $(document).ready(() => {
 
 
   $('.gallery-item').mouseover(function(){
-  	let text = this.classList[2];// text for inner in the hover-div
+  	let text = this.classList[2];  // text for inner in the hover-div
   	$(this).append(`<div class="img-hover">
   						<div class="elipse-1">
   							<img src="images/icons/Forma1.png">
@@ -164,6 +161,7 @@ $(document).ready(() => {
   	  itemSelector: '.grid-item',
   	  columnWidth: 40
   	})
+    $grid.masonry('reloadItems')
 
   	$('#but2').on('click',function(){
 
@@ -224,6 +222,7 @@ $(document).ready(() => {
   				let $elems = $( elems )
   				setTimeout(function(){
   					$grid.append( $elems ).masonry( 'appended', $elems )
+            $grid.masonry('reloadItems')
   					gridItemHov()
   					$('.section-7').css('padding-bottom', '0px')
   					$('.loader').css('display','none')
@@ -258,7 +257,7 @@ $(document).ready(() => {
 
 
   $('.link-to-top').click(function(){
-  	$('html, body').animate({ scrollTop: 0 }, 2000)
+  	$('body').animate({ scrollTop: 0 }, 2000)
   })
 
 })
